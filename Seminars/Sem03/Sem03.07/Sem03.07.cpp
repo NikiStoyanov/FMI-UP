@@ -7,30 +7,37 @@ int main()
 	int number;
 	cin >> number;
 
-    int count = 0;
-    while (number % 2 == 0) {
-        count++;
-        number /= 2;
-    }
-    if (count > 0) {
-        cout << "2^" << count << " ";
-    }
+	for (int i = number; i >= 1; i--) {
+		bool isPrime = true;
 
-    for (int i = 3; i * i <= number; i += 2) {
-        count = 0;
-        while (number % i == 0) {
-            count++;
-            number /= i;
-        }
-        if (count > 0) {
-            cout << i << "^" << count << " ";
-        }
-    }
+		if (i == 2) {
+			while (number % i == 0) {
+				cout << i << " ";
+				number /= i;
+			}
 
-    if (number > 2) {
-        cout << number << "^1 ";
-    }
-    cout << endl;
+			continue;
+		}
 
+		if (i == 1 || i % 2 == 0) {
+			isPrime = false;
+			continue;
+		}
+
+		double sqrtN = sqrt(i);
+		for (int j = 3; j <= sqrtN; j += 2) {
+			if (i % j == 0) {
+				isPrime = false;
+				break;
+			}
+		}
+
+		if (isPrime) {
+			while (number % i == 0) {
+				cout << i << " ";
+				number /= i;
+			}
+		}
+	}
 	return 0;
 }

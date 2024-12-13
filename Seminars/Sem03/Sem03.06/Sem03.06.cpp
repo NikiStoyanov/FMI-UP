@@ -7,7 +7,14 @@ int main()
 	int number;
 	cin >> number;
 	
-	for (int i = 2; i < number / 2; i++)
+	if (number == 1)
+	{
+		cout << "Not prime" << endl;
+		return 0;
+	}
+
+	int sqrtN = sqrt(number);
+	for (int i = 2; i <= sqrtN; i++)
 	{
 		if (number % i == 0)
 		{

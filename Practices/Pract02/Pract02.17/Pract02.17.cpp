@@ -4,15 +4,38 @@ using namespace std;
 
 int main()
 {
-	char a, b, c, d;
-	cin >> a >> b >> c >> d;
+	const char CAPITAL_TO_LOWER = 'a' - 'A';
 
-	char e;
-	cin >> e;
+	char firstSetStart, firstSetEnd, secondSetStart, secondSetEnd, symbol;
+	cin >> firstSetStart >> firstSetEnd >> secondSetStart >> secondSetEnd >> symbol;
 
-	bool isInUnion = (e > a && e < b) || (e > a && e < b);
+	if (symbol >= 'A' && symbol <= 'Z')
+	{
+		symbol += CAPITAL_TO_LOWER;
+	}
 
-	cout << a << " " << b << endl;
+	if (firstSetStart >= 'A' && firstSetEnd <= 'Z')
+	{
+		firstSetStart += CAPITAL_TO_LOWER;
+		firstSetEnd += CAPITAL_TO_LOWER;
+	}
 
-	return 0;
+	if (secondSetStart >= 'A' && secondSetEnd <= 'Z')
+	{
+		secondSetStart += CAPITAL_TO_LOWER;
+		secondSetEnd += CAPITAL_TO_LOWER;
+	}
+
+	bool isInFirst = symbol >= firstSetStart && symbol <= firstSetEnd;
+	bool isInSecond = symbol >= secondSetStart && symbol <= secondSetEnd;
+
+	bool isUnion = isInFirst || isInSecond;
+	bool isIntersection = isInFirst && isInSecond;
+	bool isDifference = isInFirst && !isInSecond;
+	bool isInOnlySet = isUnion && !isIntersection;
+
+	cout << boolalpha << isUnion << ", ";
+	cout << boolalpha << isIntersection << ", ";
+	cout << boolalpha << isDifference << ", ";
+	cout << boolalpha << isInOnlySet << endl;
 }

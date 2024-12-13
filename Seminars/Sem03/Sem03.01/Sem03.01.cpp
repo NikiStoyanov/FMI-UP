@@ -5,14 +5,14 @@ using namespace std;
 int main()
 {
 	int number, sum = 0;
-	cin >> number;
-
-	while (number != 0)
+	
+	do
 	{
-		sum += number;
-
 		cin >> number;
-	}
+
+		sum += number;
+	} 
+	while (number != 0);
 
 	cout << sum << endl;
 

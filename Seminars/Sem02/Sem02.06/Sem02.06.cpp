@@ -4,7 +4,11 @@ using namespace std;
 
 int main()
 {
-	int n1, n2, n3, n4, n5;
-	cin >> n1 >> n2 >> n3 >> n4 >> n5;
+	int a, b, c, d, e;
+	cin >> a >> b >> c >> d >> e;
 
+	bool isSaw = (a >= b && b <= c && c >= d && d <= e)
+		|| (a <= b && b >= c && c <= d && d >= e);
+
+	cout << (isSaw ? "yes" : "no") << endl;
 }

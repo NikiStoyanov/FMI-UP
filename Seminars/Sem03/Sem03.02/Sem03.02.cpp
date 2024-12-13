@@ -7,14 +7,18 @@ int main()
 	int number;
 	cin >> number;
 
+	int reversed = 0;
 	while (number != 0)
 	{
-		sum += number;
+		int lastDigit = number % 10;
 
-		cin >> number;
+		reversed = reversed * 10 + lastDigit;
+
+		number /= 10;
 	}
 
-	cout << sum << endl;
+
+	cout << reversed + 1 << endl;
 
 	return 0;
 }
