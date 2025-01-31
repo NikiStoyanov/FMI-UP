@@ -14,7 +14,7 @@ int main()
 	}
 
 	int firstNumber = (a / 1000) * 10 + a % 10;
-	int secondNumber = (a / 100 % 10) * 10 + a / 10 % 10;
+	int secondNumber = a / 10 % 100;
 
 	if (firstNumber > secondNumber)
 	{

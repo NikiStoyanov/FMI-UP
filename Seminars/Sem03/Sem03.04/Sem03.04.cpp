@@ -8,7 +8,8 @@ int main()
 	cin >> firstNumber >> secondNumber;
 
 	int i = firstNumber > secondNumber ? secondNumber : firstNumber;
-	while (firstNumber % i != 0 || secondNumber % i != 0) {
+	while (firstNumber % i != 0 || secondNumber % i != 0) 
+	{
 		i--;
 	}
 
