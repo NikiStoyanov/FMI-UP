@@ -9,22 +9,28 @@ bool isValidLength(unsigned length)
 	return 0 < length && length <= MAX_SIZE;
 }
 
-void readArray(int* arr, unsigned length) {
-	for (unsigned i = 0; i < length; i++) {
+void readArray(int* arr, unsigned length)
+{
+	for (unsigned i = 0; i < length; i++)
+	{
 		cin >> arr[i];
 	}
 }
 
-void reverseArray(int* arr, unsigned length) {
-	for (unsigned i = 0; i < length / 2; i++) {
+void reverseArray(int* arr, unsigned length)
+{
+	for (unsigned i = 0; i < length / 2; i++)
+	{
 		int t = arr[i];
 		arr[i] = arr[length - 1 - i];
 		arr[length - 1 - i] = t;
 	}
 }
 
-void printArray(const int* arr, unsigned length) {
-	for (unsigned i = 0; i < length; i++) {
+void printArray(const int* arr, unsigned length)
+{
+	for (unsigned i = 0; i < length; i++)
+	{
 		cout << arr[i] << " ";
 	}
 	cout << endl;
@@ -38,7 +44,8 @@ int main()
 	do
 	{
 		cin >> length;
-	} while (!isValidLength(length));
+	}
+	while (!isValidLength(length));
 
 	readArray(arr, length);
 

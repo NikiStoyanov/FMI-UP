@@ -9,13 +9,16 @@ bool isValidLength(unsigned length)
 	return 0 < length && length <= MAX_SIZE;
 }
 
-void readArray(int* arr, unsigned length) {
-	for (unsigned i = 0; i < length; i++) {
+void readArray(int* arr, unsigned length)
+{
+	for (unsigned i = 0; i < length; i++)
+	{
 		cin >> arr[i];
 	}
 }
 
-int searchBinary(int* arr, unsigned length, int value) {
+int searchBinary(int* arr, unsigned length, int value)
+{
 	int leftIndex = 0, rightIndex = length - 1;
 
 	while (leftIndex < rightIndex)
@@ -37,8 +40,10 @@ int searchBinary(int* arr, unsigned length, int value) {
 	}
 }
 
-void printArray(const int* arr, unsigned length) {
-	for (unsigned i = 0; i < length; i++) {
+void printArray(const int* arr, unsigned length)
+{
+	for (unsigned i = 0; i < length; i++)
+	{
 		cout << arr[i] << " ";
 	}
 	cout << endl;
@@ -52,7 +57,8 @@ int main()
 	do
 	{
 		cin >> length;
-	} while (!isValidLength(length));
+	}
+	while (!isValidLength(length));
 
 	readArray(arr, length);
 
