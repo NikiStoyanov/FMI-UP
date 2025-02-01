@@ -2,22 +2,26 @@
 
 using namespace std;
 
-int toCharacter(int number)
+char toCharacter(int number)
 {
-	if (number >= 0)
+	if (number >= 0 && number <= 9)
 	{
-		return number;
+		return '0' + number;
 	}
-	else
+}
+
+int toNumber(char ch)
+{
+	if (ch >= '0' && ch <= '9')
 	{
-		return -number;
+		return ch - '0';
 	}
 }
 
 int main()
 {
-	cout << myAbs(-6) << endl;
-	cout << myAbs(21) << endl;
+	cout << toNumber('8') << endl;
+	cout << toCharacter(4) << endl;
 
 	return 0;
 }

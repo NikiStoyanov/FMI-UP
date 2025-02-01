@@ -13,13 +13,18 @@ int getDivision(int first, int second)
 	}
 }
 
+int getRemainder(int first, int second)
+{
+	return first - second * getDivision(first, second);
+}
+
 int main()
 {
-	cout << getDivision(5, 2) << endl;
-	cout << getDivision(2, 2) << endl;
-	cout << getDivision(4, 2) << endl;
-	cout << getDivision(0, 2) << endl;
-	cout << getDivision(51, 7) << endl;
+	cout << getRemainder(5, 2) << endl;
+	cout << getRemainder(2, 2) << endl;
+	cout << getRemainder(4, 2) << endl;
+	cout << getRemainder(0, 2) << endl;
+	cout << getRemainder(51, 7) << endl;
 
 	return 0;
 }
